@@ -1,0 +1,181 @@
+/* ESTILOS BASE */
+
+.fechas, .fechasBis {
+    background: linear-gradient(400deg, rgba(195, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 50%);
+}
+.downCelu{
+    margin-bottom: 500px;
+}
+
+.fechasBis {
+    background: linear-gradient(260deg, rgba(195, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 50%);
+}
+
+.contenedorFechas {
+    background: white;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+.spoti{
+    align-items: initial;
+    
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 90vw; /* Cambiado a relativo para responsividad */
+    max-width: 400px;
+    height: 55vw;
+    max-height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.left-arrow {
+    left: 5px;
+}
+
+.right-arrow {
+    right: 5px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+.video-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin: 10px auto;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ✅ MEDIA QUERY PARA MÓVILES */
+
+@media (max-width: 600px) {
+    .carousel-arrow {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+    }
+
+    .carousel-slide {
+        width: 90vw;
+        height: 50vw;
+    }
+
+    .video-section {
+        padding: 10px;
+    }
+
+    .fechas, .fechasBis {
+        text-align: center;
+        font-size: 1rem;
+    }
+    img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#hero{
+    width: 100%;
+    height: 100%;
+}
+.downCelu{
+    width: 100%;
+    height: auto;
+  
+    margin-bottom: 200px;
+}
+.animated-background {
+  width: 100%;
+  height: 300px;
+  background-image: url('img/@caroconde.ph (24).jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% center;
+  animation: moverFondo 10s ease-in-out infinite alternate;
+}
+.spoti{
+    
+    padding-bottom: 600px;
+}
+
+@keyframes moverFondo {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+}

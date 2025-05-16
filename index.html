@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUANZO Y LOS QUIAS - Sitio Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Fuente Personalizada (opcional, similar a la del sitio de referencia) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Fondo oscuro principal */
+            color: #e5e7eb; /* Color de texto principal */
+        }
+        /* Estilo para el encabezado fijo */
+        header.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con transparencia */
+            backdrop-filter: blur(10px);
+        }
+        /* Estilo para el efecto de superposición en tarjetas */
+        .card-hover-effect .overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover .overlay {
+            opacity: 1;
+        }
+        /* Animación sutil para elementos al cargar */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Clases para el menú móvil */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        /* Estilos para botones */
+        .btn {
+            @apply px-6 py-3 rounded-lg font-semibold shadow-md transition-transform duration-150 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-red-500 text-black hover:bg-red-600 active:scale-95;
+        }
+        .btn-secondary {
+            @apply bg-gray-700 text-white hover:bg-gray-600 active:scale-95;
+        }
+        /* Estilo para scrollbar (opcional, para navegadores Webkit) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000; /* Gris oscuro para el track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f51b0b; /* Amarillo para el thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d90606; /* Amarillo más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="main-header" class="py-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-bold text-yellow-500"><img src="image.png" width="150px"  srcset=""></a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#hero" class="hover:text-red-400 transition-colors">Inicio</a>
+                <a href="#gira" class="hover:text-red-400 transition-colors">fechas</a>
+                <a href="#musica" class="hover:text-red-400 transition-colors">Música</a>
+                <a href="#bio" class="hover:text-red-400 transition-colors">Bio</a>
+               
+                <a href="#contacto" class="btn btn-primary">Contacto</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-gray-800 mt-2">
+            <a href="#hero" class="block py-3 px-4 text-sm hover:bg-gray-700 hover:text-red-400 transition-colors">Inicio</a>
+            <a href="#gira" class="block py-3 px-4 text-sm hover:bg-gray-700 hover:text-red-400 transition-colors">fechas</a>
+            <a href="#musica" class="block py-3 px-4 text-sm hover:bg-gray-700 hover:text-red-400 transition-colors">Música</a>
+            <a href="#bio" class="block py-3 px-4 text-sm hover:bg-gray-700 hover:text-red-400 transition-colors">Bio</a>
+           
+            <a href="#contacto" class="block py-3 px-4 text-sm hover:bg-gray-700 hover:text-red-400 transition-colors">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="animated-background h-screen bg-cover bg-center flex items-center justify-center text-center px-4" style="background-image: url('img/@caroconde.ph (24).jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+           ">
+            <div class="downCelu  p-8 md:p-12 rounded-lg fade-in-up">
+               
+              
+               
+            </div>
+        </section>
+    <div style="position: relative;">
+  <button class="carousel-arrow left-arrow" onclick="scrollCarousel(-1)">❮</button>
+  <div class="carousel-container" id="carousel">
+    <div class="carousel-slide"><img src="img/@caroconde.ph (02).jpg" alt="Imagen 1" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (03).jpg" alt="Imagen 2" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (04).jpg" alt="Imagen 3" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (06).jpg" alt="Imagen 4" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (24).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (26).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (28).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (31).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (34).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (35).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (09).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (10).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+    <div class="carousel-slide"><img src="img/@caroconde.ph (23).jpg" alt="Imagen 5" onclick="showImage(this)"></div>
+  </div>
+  <button class="carousel-arrow right-arrow" onclick="scrollCarousel(1)">❯</button>
+</div>
+
+<!-- Modal para imagen ampliada -->
+<div id="lightbox" class="lightbox" onclick="hideImage()">
+  <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+<script>
+    const carousel = document.getElementById('carousel');
+const slides = document.querySelectorAll('.carousel-slide');
+let index = 0;
+const totalSlides = slides.length;
+function moveCarousel() {
+  index = (index + 1) % totalSlides;
+  const slideWidth = slides[0].offsetWidth;
+  carousel.scrollTo({
+    left: index * slideWidth,
+    behavior: 'smooth'
+  });
+}
+
+setInterval(moveCarousel, 3000);
+
+  function scrollCarousel(direction) {
+    const container = document.getElementById('carousel');
+    const scrollAmount = 420;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  // Mostrar imagen ampliada
+  function showImage(imgElement) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imgElement.src;
+    lightbox.style.display = 'flex';
+  }
+
+  // Ocultar imagen ampliada
+  function hideImage() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+  }
+</script>
+<div class="fechas">
+ <section class="video-section bg-black">
+            <h2 class="text-center bg-black"">VIVO EN LA TRASTIENDA</h2>
+            <div class="video-container f">
+                <iframe
+                    width="560" height="315"
+                    src="https://www.youtube.com/embed/6C-jqvlByaQ?start=6"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        </div>
+
+        <section id="gira" class="py-16 md:py-24 fechas">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in-up">PRÓXIMAS FECHAS</h2>
+                <div id="tour-dates-container" class="grid grid-cols-1 md:grid-cols-2  gap-8">
+                     <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="text-xl font-semibold text-white-500 mb-2">Festival "Flama"</h3>
+                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 18 mayo, 2025</p>
+                         <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 19 HS</p>
+                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Escenario Playon Municipal</p>
+                        <a href="#" class="btn btn-primary w-full text-center">Entrada Libre Y Gratuita</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.1s;">
+                        <h3 class="text-xl font-semibold text-white-500 mb-2">Show Orange</h3>
+                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 10 Junio, 2025</p>
+                         <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 21 HS</p>
+                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Orange, San Martin</p>
+                        <a href="#" class="btn btn-primary w-full text-center">Entrada libre y gratuita</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="text-xl font-semibold text-white-500 mb-2">Cafe Berlin</h3>
+                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 10 Agosto, 2025</p>
+                         <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 21 HS</p>
+                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Cafe Berlin</p>
+                        <a href="#" class="btn btn-primary w-full text-center">Comprar Entradas</a>
+                    </div>
+                   
+                    </div>
+                <div class="text-center mt-12 fade-in-up" style="animation-delay: 0.4s;">
+                    <button id="load-more-dates" class="btn btn-secondary">Ver Todas las Fechas</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="musica" class="py-16 md:py-24 fechasBis">
+            <div class="container mx-auto px-4 ">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in-up">DISCOGRAFÍA</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden card-hover-effect fade-in-up" style="animation-delay: 0.1s;">
+                        <img src="img\vivoenla.png" alt="Portada Álbum 1" class="w-full h-64 object-cover">
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-semibold mb-2">VIVO EN LA TRASTIENDA</h3>
+                            <p class="text-sm text-gray-400 mb-4">2024</p>
+                            <div class="overlay absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4">
+                                <a href="https://open.spotify.com/intl-es/album/0zpHCYTjd3B7jXks2LwZSB?si=DTBo_IttTA-9NgmVX1rO6Q" class="btn btn-primary"><i class="fas fa-play mr-2"></i> Escuchar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden card-hover-effect fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="img\MUNDO.png" alt="Portada Álbum 2" class="w-full h-64 object-cover">
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-semibold mb-2">MUNDO DISTINTO</h3>
+                            <p class="text-sm text-gray-400 mb-4">2023</p>
+                            <div class="overlay absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4">
+                                <a href="https://open.spotify.com/intl-es/album/1sSjTiccrIay1gsCSZOV9M?si=aanCS-u3QkS1_kBWNgfyfw" class="btn btn-primary"><i class="fas fa-play mr-2"></i> Escuchar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden card-hover-effect fade-in-up" style="animation-delay: 0.3s;">
+                        <img src="img\AQUEL.png" alt="Portada Álbum 3" class="w-full h-64 object-cover">
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-semibold mb-2">AQUEL INVIERNO PASADO</h3>
+                            <p class="text-sm text-gray-400 mb-4">2018</p>
+                            <div class="overlay absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4">
+                                <a href="https://open.spotify.com/intl-es/album/1ZjcZLO1TMFPvsp89iqtXi?si=R8Li1WJQT5iatRwo-gKqUA" class="btn btn-primary"><i class="fas fa-play mr-2"></i> Escuchar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden card-hover-effect fade-in-up" style="animation-delay: 0.4s;">
+                        <img src="img\PRESENTE.png" alt="Portada Álbum 4" class="w-full h-64 object-cover">
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-semibold mb-2">PRESENTE/PASADO</h3>
+                            <p class="text-sm text-gray-400 mb-4">2018</p>
+                            <div class="overlay absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4">
+                                <a href="https://open.spotify.com/intl-es/album/6PjWo5iumzB63gm0NEiArV?si=XvYsxGS8Q3yrkr4GO9Z5nA" class="btn btn-primary"><i class="fas fa-play mr-2"></i> Escuchar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+
+        <section id="bio" class="py-16 md:py-24 fechas">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="md:w-1/2 fade-in-up">
+                        <img src="@caroconde.ph (24).jpg" alt="Foto de la Banda" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2 fade-in-up" style="animation-delay: 0.2s;">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">BIO</h2>
+                        <p class="text-lg mb-4 text-gray-300">
+                            Juanzo y Los Quías es una banda originaria del oeste bonaerense, conformada con el objetivo de crear canciones que transmitan, acompañen y conecten con quienes las escuchan. Desde su formación en 2015, el grupo se ha dedicado a construir un repertorio que pone en primer plano la palabra, la emoción y la honestidad.
+                        </p>
+                        <p class="text-lg mb-4 text-gray-300">
+                            Las letras abordan temas cotidianos, personales y universales, con una mirada íntima y reflexiva. Cada canción nace de una necesidad genuina de expresión, y se sostiene en el tiempo por su contenido humano y su compromiso con lo real.
+
+A lo largo de su recorrido, Juanzo y Los Quías ha logrado consolidar una propuesta artística coherente, sensible y cercana, priorizando siempre la conexión con el público y el valor de lo compartido.
+
+La banda continúa su camino con la convicción de que la música, más que un fin, es un lenguaje capaz de generar encuentros, memoria y sentido.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="spoti animated-background h-screen bg-cover bg-center    px-4" style="background-image: url('img/wppgris.jpg')
+        ; background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; ">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2DPhcHFozN4UDWEgn2ltBk?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </section>
+
+       
+
+     <section id="contacto" class="py-16 md:py-24 bg-gray-900 fechasBis">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in-up">CONTACTO</h2>
+    <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-lg shadow-2xl fade-in-up" style="animation-delay: 0.1s;">
+      <form id="contactForm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-300 mb-1">Nombre Completo</label>
+            <input type="text" name="nombre" id="nombre" class="w-full bg-gray-700 border-gray-600 text-white rounded-md p-3 focus:ring-yellow-500 focus:border-yellow-500" required>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Correo Electrónico</label>
+            <input type="email" name="email" id="email" class="w-full bg-gray-700 border-gray-600 text-white rounded-md p-3 focus:ring-yellow-500 focus:border-yellow-500" required>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="asunto" class="block text-sm font-medium text-gray-300 mb-1">Asunto</label>
+          <input type="text" name="asunto" id="asunto" class="w-full bg-gray-700 border-gray-600 text-white rounded-md p-3 focus:ring-yellow-500 focus:border-yellow-500" required>
+        </div>
+        <div class="mb-6">
+          <label for="mensaje" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+          <textarea name="mensaje" id="mensaje" rows="5" class="w-full bg-gray-700 border-gray-600 text-white rounded-md p-3 focus:ring-yellow-500 focus:border-yellow-500" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary text-lg">Enviar Mensaje</button>
+        </div>
+      </form>
+
+      <div id="formMessage" style="display:none; margin-top: 1rem; text-align: center; color: #adebad; font-weight: bold;">
+        ¡Formulario enviado con éxito!
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/juanzoylosquias@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        form.reset();
+        formMessage.style.display = 'block';
+        setTimeout(() => formMessage.style.display = 'none', 5000);
+      } else {
+        alert('Error al enviar el formulario. Intenta de nuevo.');
+      }
+    } catch (error) {
+      alert('Error en la conexión. Intenta más tarde.');
+    }
+  });
+</script>
+    </main>
+
+    <footer class="bg-black py-12 text-center">
+        <div class="container mx-auto px-4">
+            <div class="mb-6">
+                <a href="https://www.instagram.com/juanzoylosquias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-400 hover:text-red-500 mx-3 text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@juanzoylosquias" class="text-gray-400 hover:text-red-500 mx-3 text-2xl transition-colors"><i class="fab fa-youtube"></i></a>
+                <a href="https://open.spotify.com/intl-es/artist/2DPhcHFozN4UDWEgn2ltBk?si=d-vLLKKbRLG6D9tHl10V0w" class="text-gray-400 hover:text-red-500 mx-3 text-2xl transition-colors"><i class="fab fa-spotify"></i></a>
+            </div>
+            <p class="text-gray-500">&copy; <span id="current-year"></span> JUANZO Y LOS QUIAS. Todos los derechos reservados.</p>
+            <p class="text-xs text-gray-600 mt-2">Diseño conceptual por Tobias Carbonare. </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Lógica para el encabezado fijo (sticky header) ---
+            const header = document.getElementById('main-header');
+            const heroSection = document.getElementById('hero');
+            let headerHeight = header.offsetHeight;
+
+            // Ajustar el padding del hero section para que no quede debajo del header fijo
+            if (heroSection) {
+                 // heroSection.style.paddingTop = `${headerHeight}px`; // Descomentar si el header es fijo desde el inicio
+            }
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) { // Se vuelve fijo después de scrollear un poco
+                    header.classList.add('sticky', 'shadow-lg');
+                     if (heroSection) {
+                        // heroSection.style.paddingTop = `${headerHeight}px`; // Asegurar padding cuando es sticky
+                    }
+                } else {
+                    header.classList.remove('sticky', 'shadow-lg');
+                     if (heroSection) {
+                        // heroSection.style.paddingTop = '0'; // Resetear padding
+                    }
+                }
+            });
+
+            // --- Lógica para el menú móvil ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('open');
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenuIcon.classList.remove('fa-bars');
+                        mobileMenuIcon.classList.add('fa-times');
+                    } else {
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                });
+            }
+
+            // --- Lógica para el desplazamiento suave (Smooth Scrolling) ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Cerrar menú móvil si está abierto y se hace clic en un enlace
+                        if (mobileMenu && mobileMenu.classList.contains('open')) {
+                            mobileMenu.classList.remove('open');
+                            mobileMenuIcon.classList.remove('fa-times');
+                            mobileMenuIcon.classList.add('fa-bars');
+                        }
+                        
+                        // Calcular la posición del elemento, considerando el header fijo si existe
+                        let headerOffset = 0;
+                        const stickyHeader = document.querySelector('header.sticky');
+                        if (stickyHeader) {
+                            headerOffset = stickyHeader.offsetHeight;
+                        }
+                        
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // --- Lógica para el botón "Ver Todas las Fechas" (simulado) ---
+            const loadMoreDatesButton = document.getElementById('load-more-dates');
+            const tourDatesContainer = document.getElementById('tour-dates-container');
+            let datesLoaded = 0;
+            const datesToAdd = [ // Fechas de ejemplo adicionales
+                { city: "A CONFIRMAR", date: "05 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.1s" },
+                { city: "A CONFIRMAR, Chile", date: "20 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.2s" },
+                { city: "A CONFIRMAR, Colombia", date: "10 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena Bogotá", delay: "0.3s" }
+            ];
+
+            if (loadMoreDatesButton && tourDatesContainer) {
+                loadMoreDatesButton.addEventListener('click', function () {
+                    if (datesLoaded < datesToAdd.length) {
+                        const dateInfo = datesToAdd[datesLoaded];
+                        const newDateCard = `
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: ${dateInfo.delay};">
+                                <h3 class="text-xl font-semibold text-yellow-500 mb-2">${dateInfo.city}</h3>
+                                <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> ${dateInfo.date}</p>
+                                <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> ${dateInfo.venue}</p>
+                                <a href="#" class="btn btn-primary w-full text-center">Comprar Entradas</a>
+                            </div>
+                        `;
+                        tourDatesContainer.insertAdjacentHTML('beforeend', newDateCard);
+                        datesLoaded++;
+                        if (datesLoaded >= datesToAdd.length) {
+                            loadMoreDatesButton.textContent = "Todas las fechas cargadas";
+                            loadMoreDatesButton.disabled = true;
+                            loadMoreDatesButton.classList.remove('btn-secondary');
+                            loadMoreDatesButton.classList.add('bg-gray-600', 'cursor-not-allowed');
+                        }
+                    }
+                });
+            }
+
+            // --- Lógica para el año actual en el pie de página ---
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Animaciones al hacer scroll (simple) ---
+            // Esta es una implementación muy básica. Para algo más robusto, se usaría Intersection Observer API.
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            const animateOnScroll = () => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    // Si el elemento está visible en el viewport (con un pequeño offset)
+                    if (rect.top < window.innerHeight - 50 && rect.bottom >= 0) {
+                        // Podrías añadir una clase para activar la animación aquí si no usas `animation-delay`
+                        // Por ahora, la animación se activa al cargar con `animation-delay`
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Ejecutar una vez al cargar por si hay elementos visibles
+
+        });
+    </script>
+
+</body>
+
+</html>
