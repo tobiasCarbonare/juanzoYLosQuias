@@ -217,9 +217,7 @@ setInterval(moveCarousel, 3000);
                     </div>
                    
                     </div>
-                <div class="text-center mt-12 fade-in-up" style="animation-delay: 0.4s;">
-                    <button id="load-more-dates" class="btn btn-secondary">Ver Todas las Fechas wachin</button>
-                </div>
+              
             </div>
         </section>
 
@@ -350,7 +348,7 @@ La banda continúa su camino con la convicción de que la música, más que un f
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/juanzoylosquias@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/juanzoyquias@gmail.com', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: formData
@@ -460,38 +458,7 @@ La banda continúa su camino con la convicción de que la música, más que un f
             });
 
             // --- Lógica para el botón "Ver Todas las Fechas" (simulado) ---
-            const loadMoreDatesButton = document.getElementById('load-more-dates');
-            const tourDatesContainer = document.getElementById('tour-dates-container');
-            let datesLoaded = 0;
-            const datesToAdd = [ // Fechas de ejemplo adicionales
-                { city: "A CONFIRMAR", date: "05 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.1s" },
-                { city: "A CONFIRMAR, Chile", date: "20 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.2s" },
-                { city: "A CONFIRMAR, Colombia", date: "10 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena Bogotá", delay: "0.3s" }
-            ];
-
-            if (loadMoreDatesButton && tourDatesContainer) {
-                loadMoreDatesButton.addEventListener('click', function () {
-                    if (datesLoaded < datesToAdd.length) {
-                        const dateInfo = datesToAdd[datesLoaded];
-                        const newDateCard = `
-                            <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: ${dateInfo.delay};">
-                                <h3 class="text-xl font-semibold text-yellow-500 mb-2">${dateInfo.city}</h3>
-                                <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> ${dateInfo.date}</p>
-                                <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> ${dateInfo.venue}</p>
-                                <a href="#" class="btn btn-primary w-full text-center">Comprar Entradas</a>
-                            </div>
-                        `;
-                        tourDatesContainer.insertAdjacentHTML('beforeend', newDateCard);
-                        datesLoaded++;
-                        if (datesLoaded >= datesToAdd.length) {
-                            loadMoreDatesButton.textContent = "Todas las fechas cargadas";
-                            loadMoreDatesButton.disabled = true;
-                            loadMoreDatesButton.classList.remove('btn-secondary');
-                            loadMoreDatesButton.classList.add('bg-gray-600', 'cursor-not-allowed');
-                        }
-                    }
-                });
-            }
+         
 
             // --- Lógica para el año actual en el pie de página ---
             const currentYearSpan = document.getElementById('current-year');
