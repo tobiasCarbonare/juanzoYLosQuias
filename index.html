@@ -201,26 +201,18 @@ setInterval(moveCarousel, 3000);
         <section id="gira" class="py-16 md:py-24 fechas">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in-up">PRÓXIMAS FECHAS</h2>
-                <div id="tour-dates-container" class="grid grid-cols-1 md:grid-cols-2  gap-8">
-                     <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.2s;">
-                        <h3 class="text-xl font-semibold text-white-500 mb-2">Festival "Flama"</h3>
-                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 18 mayo, 2025</p>
-                         <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 19 HS</p>
-                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Escenario Playon Municipal</p>
-                        <a href="#" class="btn btn-primary w-full text-center">Entrada Libre Y Gratuita</a>
-                    </div>
                     <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.1s;">
-                        <h3 class="text-xl font-semibold text-white-500 mb-2">Show Orange</h3>
-                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 10 Junio, 2025</p>
+                        <h3 class="text-xl font-semibold text-white-500 mb-2">Orange San Martin</h3>
+                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> Sabado 7 Junio, 2025</p>
                          <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 21 HS</p>
-                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Orange, San Martin</p>
+                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> PTE PERÓN 3330 PTE PERÓN 3290 San Martín.</p>
                         <a href="#" class="btn btn-primary w-full text-center">Entrada libre y gratuita</a>
                     </div>
                     <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 fade-in-up" style="animation-delay: 0.2s;">
                         <h3 class="text-xl font-semibold text-white-500 mb-2">Cafe Berlin</h3>
-                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> 10 Agosto, 2025</p>
+                        <p class="text-gray-400 mb-1"><i class="fas fa-calendar-alt mr-2"></i> Domingo 10 Agosto, 2025</p>
                          <p class="text-gray-400 mb-1"><i class="fas fa-clock mr-2"></i> 21 HS</p>
-                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Cafe Berlin</p>
+                        <p class="text-gray-400 mb-4"><i class="fas fa-map-marker-alt mr-2">Av. S. Martín 6656, C1419 Cdad. Autónoma de Buenos Aires</i> </p>
                         <a href="#" class="btn btn-primary w-full text-center">Comprar Entradas</a>
                     </div>
                    
@@ -472,9 +464,7 @@ La banda continúa su camino con la convicción de que la música, más que un f
             const tourDatesContainer = document.getElementById('tour-dates-container');
             let datesLoaded = 0;
             const datesToAdd = [ // Fechas de ejemplo adicionales
-                { city: "A CONFIRMAR", date: "05 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.1s" },
-                { city: "A CONFIRMAR, Chile", date: "20 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena", delay: "0.2s" },
-                { city: "A CONFIRMAR, Colombia", date: "10 A CONFIRMAR, 2025", venue: "A CONFIRMAR Arena Bogotá", delay: "0.3s" }
+                {}//aca puedo agregar mas fechas
             ];
 
             if (loadMoreDatesButton && tourDatesContainer) {
