@@ -20,240 +20,15 @@
 .whatsapp-float:hover {
   background: #1ebe57;
 }
-
-/* FONDOS DINÁMICOS MEJORADOS */
-.fechas {
-    background: linear-gradient(135deg, 
-        rgba(195, 34, 34, 0.9) 0%, 
-        rgba(139, 0, 0, 0.8) 25%,
-        rgba(0, 0, 0, 0.9) 50%,
-        rgba(139, 0, 0, 0.8) 75%,
-        rgba(195, 34, 34, 0.9) 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
+.fechas, .fechasBis {
+    background: linear-gradient(400deg, rgba(195, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 50%);
 }
-
-.fechas::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(195, 34, 34, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(139, 0, 0, 0.2) 0%, transparent 50%);
-    animation: floatingCircles 12s ease-in-out infinite;
-    z-index: 1;
+.downCelu{
+    margin-bottom: 500px;
 }
 
 .fechasBis {
-    background: linear-gradient(225deg, 
-        rgba(195, 34, 34, 0.9) 0%, 
-        rgba(0, 0, 0, 0.9) 30%,
-        rgba(139, 0, 0, 0.8) 60%,
-        rgba(0, 0, 0, 0.9) 100%);
-    background-size: 400% 400%;
-    animation: gradientShiftReverse 10s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-}
-
-.fechasBis::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(45deg, transparent 30%, rgba(195, 34, 34, 0.1) 50%, transparent 70%),
-        linear-gradient(-45deg, transparent 30%, rgba(255, 0, 0, 0.1) 50%, transparent 70%);
-    animation: diagonalMove 15s linear infinite;
-    z-index: 1;
-}
-
-/* ANIMACIONES DE FONDOS */
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes gradientShiftReverse {
-    0%, 100% {
-        background-position: 100% 50%;
-    }
-    50% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes floatingCircles {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 0.7;
-    }
-    33% {
-        transform: translateY(-20px) rotate(120deg);
-        opacity: 0.4;
-    }
-    66% {
-        transform: translateY(10px) rotate(240deg);
-        opacity: 0.8;
-    }
-}
-
-@keyframes diagonalMove {
-    0% {
-        transform: translateX(-100%) translateY(-100%);
-    }
-    100% {
-        transform: translateX(100%) translateY(100%);
-    }
-}
-
-/* FONDO HERO MEJORADO */
-.hero-dynamic {
-    background: linear-gradient(
-        45deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(195, 34, 34, 0.3) 50%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
-    background-size: 200% 200%;
-    animation: heroGradient 6s ease-in-out infinite;
-}
-
-@keyframes heroGradient {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-/* EFECTOS ADICIONALES */
-.section-content {
-    position: relative;
-    z-index: 2;
-}
-
-.particle-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.particle {
-    position: absolute;
-    background: rgba(195, 34, 34, 0.3);
-    border-radius: 50%;
-    animation: float 20s infinite linear;
-}
-
-.particle:nth-child(1) {
-    width: 4px;
-    height: 4px;
-    left: 10%;
-    animation-delay: 0s;
-    animation-duration: 15s;
-}
-
-.particle:nth-child(2) {
-    width: 6px;
-    height: 6px;
-    left: 20%;
-    animation-delay: 2s;
-    animation-duration: 18s;
-}
-
-.particle:nth-child(3) {
-    width: 3px;
-    height: 3px;
-    left: 30%;
-    animation-delay: 4s;
-    animation-duration: 12s;
-}
-
-.particle:nth-child(4) {
-    width: 5px;
-    height: 5px;
-    left: 40%;
-    animation-delay: 6s;
-    animation-duration: 16s;
-}
-
-.particle:nth-child(5) {
-    width: 4px;
-    height: 4px;
-    left: 50%;
-    animation-delay: 8s;
-    animation-duration: 14s;
-}
-
-.particle:nth-child(6) {
-    width: 7px;
-    height: 7px;
-    left: 60%;
-    animation-delay: 10s;
-    animation-duration: 20s;
-}
-
-.particle:nth-child(7) {
-    width: 3px;
-    height: 3px;
-    left: 70%;
-    animation-delay: 12s;
-    animation-duration: 13s;
-}
-
-.particle:nth-child(8) {
-    width: 5px;
-    height: 5px;
-    left: 80%;
-    animation-delay: 14s;
-    animation-duration: 17s;
-}
-
-.particle:nth-child(9) {
-    width: 4px;
-    height: 4px;
-    left: 90%;
-    animation-delay: 16s;
-    animation-duration: 19s;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.downCelu{
-    margin-bottom: 500px;
+    background: linear-gradient(260deg, rgba(195, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 50%);
 }
 
 .contenedorFechas {
@@ -271,33 +46,14 @@
 .carousel-container::-webkit-scrollbar {
     display: none;
 }
-
 .spoti{
     align-items: initial;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(195, 34, 34, 0.2) 30%,
-        rgba(0, 0, 0, 0.8) 70%,
-        rgba(139, 0, 0, 0.3) 100%
-    );
-    background-size: 300% 300%;
-    animation: spotifyBg 12s ease-in-out infinite;
-    position: relative;
-}
-
-@keyframes spotifyBg {
-    0%, 100% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
+    
 }
 
 .carousel-slide {
     flex: 0 0 auto;
-    width: 90vw;
+    width: 90vw; /* Cambiado a relativo para responsividad */
     max-width: 400px;
     height: 55vw;
     max-height: 250px;
@@ -319,19 +75,13 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.8rem;
-    background: rgba(195, 34, 34, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 6px 12px;
     cursor: pointer;
     z-index: 2;
     border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.carousel-arrow:hover {
-    background: rgba(195, 34, 34, 1);
-    transform: translateY(-50%) scale(1.1);
 }
 
 .left-arrow {
@@ -364,15 +114,9 @@
     margin: 20px auto;
     padding: 20px;
     max-width: 800px;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(195, 34, 34, 0.1) 50%,
-        rgba(0, 0, 0, 0.9) 100%
-    );
-    box-shadow: 0 0 30px rgba(195, 34, 34, 0.3);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    border: 1px solid rgba(195, 34, 34, 0.2);
 }
 
 section {
@@ -397,6 +141,7 @@ section {
 }
 
 /* ✅ MEDIA QUERY PARA MÓVILES */
+
 @media (max-width: 600px) {
     .carousel-arrow {
         font-size: 1.2rem;
@@ -416,44 +161,42 @@ section {
         text-align: center;
         font-size: 1rem;
     }
-    
     img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#hero{
+    width: 100%;
+    height: 100%;
+}
+.downCelu{
+    width: 100%;
+    height: auto;
+  
+    margin-bottom: 200px;
+}
+.animated-background {
+  width: 100%;
+  height: 300px;
+  background-image: url('img/@caroconde.ph (24).jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% center;
+  animation: moverFondo 10s ease-in-out infinite alternate;
+}
+.spoti{
     
-    #hero{
-        width: 100%;
-        height: 100%;
-    }
-    
-    .downCelu{
-        width: 100%;
-        height: auto;
-        margin-bottom: 200px;
-    }
-    
-    .animated-background {
-        width: 100%;
-        height: 300px;
-        background-image: url('img/@caroconde.ph (24).jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 0% center;
-        animation: moverFondo 10s ease-in-out infinite alternate;
-    }
-    
-    .spoti{
-        padding-bottom: 600px;
-    }
+    padding-bottom: 600px;
+}
 
-    @keyframes moverFondo {
-        0% {
-            background-position: 0% center;
-        }
-        100% {
-            background-position: 100% center;
-        }
-    }
+@keyframes moverFondo {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
 }
