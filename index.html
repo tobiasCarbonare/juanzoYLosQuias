@@ -209,7 +209,7 @@ setInterval(moveCarousel, 3000);
 </section>
 
 <script>
-  fetch('https://opensheet.elk.sh/1xSH4oGHffAFys5s13aUm7BtFhPMZ1iFxn9suUi8TgfE/Fechas')
+  fetch('https://opensheet.elk.sh/1xSH4oGHffAFys5s13aUm7BtFhPMZ1iFxn9suUi8TgfE/Fechas?nocache=' + Date.now())
     .then(response => response.json())
     .then(fechas => {
       const fechasList = document.getElementById('fechas-list');
